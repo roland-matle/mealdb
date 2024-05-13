@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mealdb</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Receptek</h1>
-    <form action="#" class="js-form">
+    <form action="#" class="js-form" method="GET">
         <label>
             Keresés (angolul):
             <input type="text" name="food">
         </label>
         <button type="submit">Keresés</button>
+        <div class="error js-error"></div>
     </form>
     <section class="js-receptek"></section>
     <script src="./mealdb.js"></script>
