@@ -11,6 +11,22 @@ function getApiUrl (search) {
 
 function renderRecipe(response){
     console.log("render", response);
+    let meals = response.meals;
+    let html = "";
+    for (let meal of meals) {
+        html += `
+            <section>
+                <h3>${meal.strMeal}</h3>
+                <p>${meal.strInstructions}</p>
+                <img src="" alt="${meal.strMeal}<">
+            </section>
+        `;
+    }
+    if (html.length > 0){
+        $container.innerHTML = html;
+    } else {
+        $errorField.innerHTML = "Nincs találat.";
+    }
 }
 
 function formSubmitted(event) {
