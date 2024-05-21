@@ -13,9 +13,13 @@ function renderRecipe(response){
     console.log("render", response);
     let meals = response.meals;
     let html = "";
+    if (meals === null) {
+        $errorField.innerHTML = "Nincs találat.";
+        return;
+    }
     for (let meal of meals) {
         html += `
-            <section>
+            <section class="meal">
                 <h3>${meal.strMeal}</h3>
                 <p>${meal.strInstructions}</p>
                 <img src="${meal.strMealThumb}" alt="${meal.strMeal}" class="meal-thumbnail-img">
