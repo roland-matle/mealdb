@@ -18,7 +18,7 @@ function renderRecipe(response){
             <section>
                 <h3>${meal.strMeal}</h3>
                 <p>${meal.strInstructions}</p>
-                <img src="" alt="${meal.strMeal}<">
+                <img src="${meal.strMealThumb}" alt="${meal.strMeal}" class="meal-thumbnail-img">
             </section>
         `;
     }
@@ -32,6 +32,7 @@ function renderRecipe(response){
 function formSubmitted(event) {
     event.preventDefault();
     const value = $searchInput.value.trim();
+    $container.innerHTML = "";
     if (value.length > 0) {
         $errorField.innerHTML = "";
         fetch(getApiUrl(value))
